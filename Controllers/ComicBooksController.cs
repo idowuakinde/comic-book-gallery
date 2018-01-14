@@ -5,9 +5,12 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public string Detail()
+        public ContentResult Detail()
         {
-            return "Hello World, from the Comic Books controller!";
+            return new ContentResult() 
+            { 
+                Content = "Hello World, from the Comic Books controller!" 
+            };
         }
     }
 }
