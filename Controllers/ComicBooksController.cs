@@ -5,12 +5,13 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public ContentResult Detail()
+        public ActionResult Detail()
         {
-            return new ContentResult() 
-            { 
-                Content = "Hello World, from the Comic Books controller!" 
-            };
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
+            {
+                return Redirect("/");
+            }
+            return Content("Hello World, from the Comic Books controller!");
         }
     }
 }
